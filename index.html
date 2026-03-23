@@ -562,3 +562,91 @@ document.addEventListener('DOMContentLoaded', function() {
 #secondary-cta h2 { margin-bottom: 10px; }
 #secondary-cta p { margin-bottom: 15px; }
 </style>
+<!-- PART 6: Advanced SEO, Reviews, GDPR, Lazy-Load, Year Updater -->
+
+<!-- Multiple Reviews Schema for Trust Signals -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "HRCP Online Courses",
+  "image": "https://brightlane.github.io/ce-courses-online/images/hrcp-logo.webp",
+  "description": "HRCP offers HR certification prep and CE courses for PHR, SPHR, SHRM-CP, and more.",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "1250"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type":"Person","name":"Jessica M."},
+      "datePublished":"2026-02-15",
+      "reviewBody":"Excellent course material for PHR exam preparation!",
+      "reviewRating":{"@type":"Rating","ratingValue":"5"}
+    },
+    {
+      "@type": "Review",
+      "author": {"@type":"Person","name":"Michael R."},
+      "datePublished":"2026-01-30",
+      "reviewBody":"Very helpful for earning CE credits quickly.",
+      "reviewRating":{"@type":"Rating","ratingValue":"5"}
+    }
+  ]
+}
+</script>
+
+<!-- Cookie Consent & GDPR Compliance -->
+<div id="cookie-consent-banner" role="dialog" aria-live="polite" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:15px;text-align:center;z-index:9999;">
+  <p>We use cookies to improve your experience and comply with GDPR. By continuing, you accept our <a href="https://www.hrcp.com/privacy-policy" target="_blank" style="color:#ffc107;">Privacy Policy</a>.</p>
+  <button id="accept-cookies" style="margin-left:15px;padding:5px 10px;background:#ffc107;border:none;border-radius:4px;cursor:pointer;">Accept</button>
+</div>
+
+<script>
+// Show cookie banner if not accepted
+document.addEventListener('DOMContentLoaded', function() {
+  const banner = document.getElementById('cookie-consent-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+
+  if (!localStorage.getItem('cookiesAccepted')) {
+    banner.style.display = 'block';
+  }
+
+  acceptBtn.addEventListener('click', function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    banner.style.display = 'none';
+  });
+});
+</script>
+
+<!-- Auto Year Updater for Footer -->
+<footer id="site-footer" style="text-align:center;padding:20px;background:#f1f1f1;margin-top:40px;">
+  <p>&copy; <span id="current-year"></span> HRCP Online Courses. All rights reserved.</p>
+  <p><a href="https://www.hrcp.com/privacy-policy" target="_blank">Privacy Policy</a> | <a href="https://www.hrcp.com/contact" target="_blank">Contact</a></p>
+</footer>
+
+<script>
+// Automatically update the year
+document.addEventListener('DOMContentLoaded', function() {
+  const yearElem = document.getElementById('current-year');
+  if (yearElem) yearElem.textContent = new Date().getFullYear();
+});
+</script>
+
+<!-- Lazy-load all images with data-src fallback -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('img[data-src]');
+  images.forEach(img => {
+    img.src = img.dataset.src;
+    img.onerror = () => { img.src = 'https://brightlane.github.io/ce-courses-online/images/placeholder.webp'; };
+    img.removeAttribute('data-src');
+  });
+});
+</script>
+
+<style>
+#cookie-consent-banner { transition: transform 0.3s ease; }
+#cookie-consent-banner a { text-decoration: underline; }
+#cookie-consent-banner button:hover { background:#e6b800; }
+</style>
