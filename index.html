@@ -650,3 +650,121 @@ document.addEventListener('DOMContentLoaded', function() {
 #cookie-consent-banner a { text-decoration: underline; }
 #cookie-consent-banner button:hover { background:#e6b800; }
 </style>
+<!-- PART 7: Final Navigation, FAQ Accordion, Rich Snippets, Footer Fixed -->
+
+<!-- Navigation Menu -->
+<nav id="main-nav" style="background:#0056b3; padding:10px; position:sticky; top:0; z-index:1000;">
+  <ul style="list-style:none; margin:0; padding:0; display:flex; justify-content:center; flex-wrap:wrap;">
+    <li style="margin:0 15px;"><a href="#expanded-blog-longform" style="color:#fff; text-decoration:none;">Blog Guides</a></li>
+    <li style="margin:0 15px;"><a href="#faq-section" style="color:#fff; text-decoration:none;">FAQ</a></li>
+    <li style="margin:0 15px;"><a href="#secondary-cta" style="color:#fff; text-decoration:none;">Enroll Now</a></li>
+    <li style="margin:0 15px;"><a href="#site-footer" style="color:#fff; text-decoration:none;">Contact / Privacy</a></li>
+  </ul>
+</nav>
+
+<!-- FAQ Section with Accordion -->
+<section id="faq-section" style="padding:20px; background:#f1f7ff;">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">What is HRCP?</button>
+    <div class="faq-answer" aria-hidden="true">
+      <p>HRCP offers HR certification prep courses and CE credits for PHR, SPHR, SHRM-CP, and other HR certifications.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">How do I earn CE credits?</button>
+    <div class="faq-answer" aria-hidden="true">
+      <p>Enroll in HRCP courses, complete lessons, and earn CE credits that can be applied to HR certifications.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">Do you offer online courses?</button>
+    <div class="faq-answer" aria-hidden="true">
+      <p>Yes! All HRCP courses are available online and can be accessed from any device.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Accordion Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    answer.style.display = 'none';
+    btn.addEventListener('click', () => {
+      const isOpen = answer.style.display === 'block';
+      answer.style.display = isOpen ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', !isOpen);
+      answer.setAttribute('aria-hidden', isOpen);
+    });
+  });
+});
+</script>
+
+<!-- FAQ Schema for Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is HRCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HRCP offers HR certification prep courses and CE credits for PHR, SPHR, SHRM-CP, and other HR certifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I earn CE credits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enroll in HRCP courses, complete lessons, and earn CE credits that can be applied to HR certifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer online courses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! All HRCP courses are available online and can be accessed from any device."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Footer (Fixed Visibility, Privacy & Contact Always Visible) -->
+<footer id="site-footer" style="text-align:center;padding:20px;background:#f1f1f1;margin-top:40px;">
+  <p>&copy; <span id="current-year"></span> HRCP Online Courses. All rights reserved.</p>
+  <p>
+    <a href="https://www.hrcp.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> |
+    <a href="https://www.hrcp.com/contact" target="_blank" rel="noopener noreferrer">Contact</a>
+  </p>
+</footer>
+
+<script>
+// Automatically update the year
+document.addEventListener('DOMContentLoaded', function() {
+  const yearElem = document.getElementById('current-year');
+  if (yearElem) yearElem.textContent = new Date().getFullYear();
+});
+</script>
+
+<!-- Final Styling -->
+<style>
+#faq-section h2 { font-size:2rem; margin-bottom:15px; text-align:center; }
+.faq-item { margin-bottom:10px; border-bottom:1px solid #ccc; }
+.faq-question { width:100%; text-align:left; padding:10px; font-size:1.1rem; background:#eaf4ff; border:none; cursor:pointer; border-radius:4px; }
+.faq-answer { padding:10px; background:#fff; font-size:1rem; border-radius:4px; margin-top:5px; }
+@media(max-width:768px){
+  #main-nav ul { flex-direction:column; align-items:center; }
+  #main-nav li { margin:10px 0; }
+}
+</style>
