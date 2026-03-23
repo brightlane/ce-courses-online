@@ -241,3 +241,103 @@ h2,h3 {color:#0073e6;}
 <style>
 #ce-images img {margin:15px 0; border-radius:5px; max-width:100%; height:auto;}
 </style>
+<!-- PART 4: Cookie Consent, Analytics, Enhanced Sticky CTA -->
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:15px;text-align:center;z-index:999;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+  <span>We use cookies to improve your experience and comply with GDPR/CCPA.</span>
+  <button id="accept-cookies" style="background:#0073e6;color:#fff;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;">Accept</button>
+</div>
+
+<script>
+// Cookie Consent Handling
+document.getElementById('accept-cookies').addEventListener('click', function() {
+  document.getElementById('cookie-consent').style.display = 'none';
+  localStorage.setItem('cookiesAccepted', 'true');
+});
+
+// Persist Consent
+if(localStorage.getItem('cookiesAccepted') === 'true'){
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+
+<!-- Google Analytics / GTM Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'YOUR_TRACKING_ID', { 'anonymize_ip': true }); // GDPR friendly
+</script>
+
+<!-- Enhanced Sticky CTA -->
+<div id="sticky-cta">
+  <p>Ready to pass HRCP & CE exams? <a class="cta-button" href="https://www.linkconnector.com/ta.php?lc=007949120620007379&atid=HrcpWeb" target="_blank">Get HRCP & CE Courses Now</a></p>
+</div>
+
+<style>
+#sticky-cta {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#ff6f00;
+  color:#fff;
+  padding:15px;
+  text-align:center;
+  z-index:1000;
+}
+#sticky-cta .cta-button {color:#fff; background:#0073e6; padding:12px 20px; border-radius:4px; text-decoration:none;}
+#sticky-cta .cta-button:hover {background:#005bb5; transform:scale(1.05); transition:0.2s;}
+</style>
+<!-- PART 4: Cookie Consent, Analytics, Enhanced Sticky CTA -->
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:15px;text-align:center;z-index:999;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+  <span>We use cookies to improve your experience and comply with GDPR/CCPA.</span>
+  <button id="accept-cookies" style="background:#0073e6;color:#fff;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;">Accept</button>
+</div>
+
+<script>
+// Cookie Consent Handling
+document.getElementById('accept-cookies').addEventListener('click', function() {
+  document.getElementById('cookie-consent').style.display = 'none';
+  localStorage.setItem('cookiesAccepted', 'true');
+});
+
+// Persist Consent
+if(localStorage.getItem('cookiesAccepted') === 'true'){
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+</script>
+
+<!-- Google Analytics / GTM Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'YOUR_TRACKING_ID', { 'anonymize_ip': true }); // GDPR friendly
+</script>
+
+<!-- Enhanced Sticky CTA -->
+<div id="sticky-cta">
+  <p>Ready to pass HRCP & CE exams? <a class="cta-button" href="https://www.linkconnector.com/ta.php?lc=007949120620007379&atid=HrcpWeb" target="_blank">Get HRCP & CE Courses Now</a></p>
+</div>
+
+<style>
+#sticky-cta {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#ff6f00;
+  color:#fff;
+  padding:15px;
+  text-align:center;
+  z-index:1000;
+}
+#sticky-cta .cta-button {color:#fff; background:#0073e6; padding:12px 20px; border-radius:4px; text-decoration:none;}
+#sticky-cta .cta-button:hover {background:#005bb5; transform:scale(1.05); transition:0.2s;}
+</style>
