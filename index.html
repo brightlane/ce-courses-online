@@ -454,3 +454,70 @@ img {display:block; max-width:100%; height:auto;}
   ]
 }
 </script>
+<!-- PART 7: Footer, Privacy, Contact, Auto-Year, Sticky CTA -->
+
+<!-- Final Sticky Conversion CTA -->
+<div id="final-sticky-cta">
+  <p>Ready to master HRCP & CE Courses? <a class="cta-button" href="https://www.linkconnector.com/ta.php?lc=007949120620007379&atid=HrcpWeb" target="_blank">Get HRCP & CE Courses Now</a></p>
+</div>
+
+<style>
+#final-sticky-cta {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#ff6f00;
+  color:#fff;
+  padding:15px;
+  text-align:center;
+  z-index:1000;
+}
+#final-sticky-cta .cta-button {color:#fff; background:#0073e6; padding:12px 20px; border-radius:4px; text-decoration:none;}
+#final-sticky-cta .cta-button:hover {background:#005bb5; transform:scale(1.05); transition:0.2s;}
+</style>
+
+<!-- Footer with Privacy & Contact -->
+<footer id="footer" style="text-align:center; padding:25px; font-size:14px; color:#555; background:#f2f2f2;">
+  <p>&copy; <span id="currentYear"></span> HRCP & CE Courses. All rights reserved.</p>
+  <p>
+    <a href="https://www.hrcp.com/contact" target="_blank">Contact HRCP</a> | 
+    <a href="https://www.hrcp.com/privacy" target="_blank">Privacy Policy</a>
+  </p>
+  <p>This site complies with GDPR and CCPA privacy requirements.</p>
+</footer>
+
+<!-- Automatic Year Updater -->
+<script>
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+<!-- Optional Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"HRCP & SecuritiesCE",
+  "url":"https://yourwebsite.com",
+  "logo":"https://yourwebsite.com/images/hrcp-ce-logo.png",
+  "sameAs":[
+    "https://www.linkedin.com/company/hrcp",
+    "https://twitter.com/hrcp",
+    "https://www.facebook.com/hrcp"
+  ],
+  "contactPoint":[
+    {
+      "@type":"ContactPoint",
+      "telephone":"+1-800-000-0000",
+      "contactType":"customer service",
+      "areaServed":"US"
+    }
+  ]
+}
+</script>
+
+<style>
+body {scroll-behavior:smooth;}
+a {transition:color 0.2s;}
+a:hover {color:#005bb5;}
+</style>
