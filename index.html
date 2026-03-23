@@ -407,3 +407,50 @@ document.addEventListener("DOMContentLoaded", function(){
 body {font-display: swap; font-family: 'Roboto', Arial, sans-serif;}
 img {display:block; max-width:100%; height:auto;}
 </style>
+<!-- PART 6: Internal Linking + Breadcrumb Structured Data -->
+
+<!-- Quick Navigation/Internal Links -->
+<section id="internal-links" style="padding:30px 20px; background:#f2f2f2;">
+  <h2>Quick Navigation for HRCP & CE Courses</h2>
+  <ul>
+    <li><a href="#hero" title="Return to Hero Section">Top of Page</a></li>
+    <li><a href="#expanded-blog-longform" title="Long-Form Guides">Guides & Blog</a></li>
+    <li><a href="#ce-reviews" title="Student Reviews">Student Reviews</a></li>
+    <li><a href="#ce-images" title="CE Course Visual Guides">Visual Guides</a></li>
+    <li><a href="#course-comparison" title="CE Course Comparison">Course Comparison</a></li>
+  </ul>
+</section>
+
+<style>
+#internal-links ul {list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:15px;}
+#internal-links ul li a {color:#0073e6; text-decoration:none; font-weight:bold;}
+#internal-links ul li a:hover {text-decoration:underline;}
+</style>
+
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://yourwebsite.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HRCP & CE Courses",
+      "item": "https://yourwebsite.com/hrcp-ce-courses"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Long-Form Guides",
+      "item": "https://yourwebsite.com/hrcp-ce-courses#expanded-blog-longform"
+    }
+  ]
+}
+</script>
