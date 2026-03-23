@@ -341,3 +341,69 @@ gtag('config', 'YOUR_TRACKING_ID', { 'anonymize_ip': true }); // GDPR friendly
 #sticky-cta .cta-button {color:#fff; background:#0073e6; padding:12px 20px; border-radius:4px; text-decoration:none;}
 #sticky-cta .cta-button:hover {background:#005bb5; transform:scale(1.05); transition:0.2s;}
 </style>
+<!-- PART 5: PageSpeed, Core Web Vitals, Preload, Lazy Loading -->
+
+<!-- Preload Key Images & Fonts -->
+<link rel="preload" href="https://yourwebsite.com/images/hrcp-ce-banner.webp" as="image">
+<link rel="preload" href="https://yourwebsite.com/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Lazy Load Enhancement for Course Images -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  lazyImages.forEach(img => {
+    if('IntersectionObserver' in window){
+      const observer = new IntersectionObserver((entries, observer)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            img.src = img.dataset.src || img.src;
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      observer.observe(img);
+    }
+  });
+});
+</script>
+
+<!-- SEO Meta & Open Graph Optimization -->
+<head>
+  <meta name="description" content="HRCP & CE Courses 2026: PHR, SPHR, SHRM-CP exam prep and Broker/Investment CE online courses with guides, flashcards, practice exams, and reviews.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HRCP & CE Courses 2026 – Exam Prep & Online CE Courses">
+  <meta property="og:description" content="Ace PHR, SPHR, SHRM-CP exams and complete CE courses with HRCP guides, SecuritiesCE courses, flashcards, and practice exams.">
+  <meta property="og:image" content="https://yourwebsite.com/images/hrcp-ce-banner.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/hrcp-ce-courses">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HRCP & CE Courses 2026 – Exam Prep & CE Online">
+  <meta name="twitter:description" content="Prepare for PHR, SPHR, SHRM-CP and earn CE credits with HRCP & SecuritiesCE courses.">
+  <meta name="twitter:image" content="https://yourwebsite.com/images/hrcp-ce-banner.webp">
+</head>
+
+<!-- Optimized Responsive Images -->
+<img src="https://yourwebsite.com/images/ce-broker.webp"
+     srcset="https://yourwebsite.com/images/ce-broker-400.webp 400w,
+             https://yourwebsite.com/images/ce-broker-800.webp 800w,
+             https://yourwebsite.com/images/ce-broker-1200.webp 1200w"
+     sizes="(max-width: 768px) 100vw, 800px"
+     alt="SecuritiesCE Broker Course"
+     loading="lazy">
+
+<img src="https://yourwebsite.com/images/ce-investment.webp"
+     srcset="https://yourwebsite.com/images/ce-investment-400.webp 400w,
+             https://yourwebsite.com/images/ce-investment-800.webp 800w,
+             https://yourwebsite.com/images/ce-investment-1200.webp 1200w"
+     sizes="(max-width: 768px) 100vw, 800px"
+     alt="SecuritiesCE Investment Course"
+     loading="lazy">
+
+<!-- Core Web Vitals Enhancements -->
+<style>
+body {font-display: swap; font-family: 'Roboto', Arial, sans-serif;}
+img {display:block; max-width:100%; height:auto;}
+</style>
